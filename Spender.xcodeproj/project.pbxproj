@@ -17,6 +17,7 @@
 		2987342A2882002D00CA7501 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298734292882002D00CA7501 /* TransactionRow.swift */; };
 		2987342D28821B8400CA7501 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 2987342C28821B8400CA7501 /* SwiftUIFontIcon */; };
 		2987342F288268AF00CA7501 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987342E288268AF00CA7501 /* TransactionListViewModel.swift */; };
+		29EA99822884A10200616210 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA99812884A10200616210 /* RecentTransactionList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		298734272881FCAC00CA7501 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		298734292882002D00CA7501 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		2987342E288268AF00CA7501 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		29EA99812884A10200616210 /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				29657C362881EE9300C70593 /* SpenderApp.swift */,
 				29657C382881EE9300C70593 /* ContentView.swift */,
+				29EA99812884A10200616210 /* RecentTransactionList.swift */,
 				298734292882002D00CA7501 /* TransactionRow.swift */,
 				2987342E288268AF00CA7501 /* TransactionListViewModel.swift */,
 				298734252881FB6C00CA7501 /* TransactionModel.swift */,
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298734282881FCAC00CA7501 /* PreviewData.swift in Sources */,
+				29EA99822884A10200616210 /* RecentTransactionList.swift in Sources */,
 				298734262881FB6C00CA7501 /* TransactionModel.swift in Sources */,
 				29657C392881EE9300C70593 /* ContentView.swift in Sources */,
 				2987342A2882002D00CA7501 /* TransactionRow.swift in Sources */,

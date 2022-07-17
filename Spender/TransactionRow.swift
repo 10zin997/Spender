@@ -15,11 +15,11 @@ struct TransactionRow: View {
         HStack(spacing: 20){
             
             //MARK :- Transaction Category Icon
-            RoundedRectangle(cornerRadius: 20,style: .continuous)
+            RoundedRectangle(cornerRadius: 50,style: .continuous)
                 .fill(Color.icon.opacity(0.5))
                 .frame(width: 50, height: 50)
                 .overlay{
-                    FontIcon.text(.awesome5Solid(code: .icons), fontsize: 24,color: Color.icon)
+                    FontIcon.text(.awesome5Solid(code: transaction.icon), fontsize: 24,color: Color.icon)
                 }
             
             VStack(alignment: .leading, spacing: 10) {
