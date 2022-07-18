@@ -18,6 +18,7 @@ struct RecentTransactionList: View {
                 Spacer()
                 //MARK :- Header Link
                 NavigationLink{
+                    TransactionList()
                     
                 }label: {
                     HStack{
@@ -52,9 +53,12 @@ struct RecentTransactionList_Previews: PreviewProvider {
     }()
     static var previews: some View {
         Group {
-            RecentTransactionList()
+          NavigationView { // add this to navigate to different screen
+              RecentTransactionList()
             RecentTransactionList()
                 .preferredColorScheme(.dark)
+        }
+            
         }
         .environmentObject(transactionListVM)
     }

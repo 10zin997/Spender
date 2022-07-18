@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct ContentView: View {
+    var demoData: [Double] = [8,2,4,6,12,9,2]
     var body: some View {
-        
         NavigationView{
             ScrollView{
                 VStack(alignment: .leading, spacing: 24){
@@ -17,6 +18,21 @@ struct ContentView: View {
                     Text("Overview")
                         .font(.title)
                         .fontWeight(.bold)
+                    
+                    //MARK :- Chart
+                    CardView {
+                        VStack {
+                        ChartLabel("$900", type: .title)
+                        LineChart()
+                        }
+                            .background(Color.systemBackground) //the chart is not dynamic for darkmode so we have to manually fix it to work for darkmode as well
+                    }
+                    
+                    .data(demoData)
+                    .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: [ColorGradient(.icon.opacity(0.4),.icon)]))
+                .frame(height: 100)
+                
+                    
                     //MARK :- Recent Transaction List
                     //RecentTransactionList is a child of contentView and is dependent on the enviromentObject.To solve this we have to pass an instance of transactionListViewModel in preview.
                     
@@ -40,7 +56,7 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(.stack)
-        
+        .accentColor(.primary) //back button is defaulted to blue from xcode default accent color.
     }
 }
 

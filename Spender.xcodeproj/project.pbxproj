@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290613AF288612D4005FE8B1 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 290613AE288612D4005FE8B1 /* Collections */; };
+		290613B2288614C1005FE8B1 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 290613B1288614C1005FE8B1 /* SwiftUICharts */; };
 		29657C372881EE9300C70593 /* SpenderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29657C362881EE9300C70593 /* SpenderApp.swift */; };
 		29657C392881EE9300C70593 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29657C382881EE9300C70593 /* ContentView.swift */; };
 		29657C3B2881EE9600C70593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29657C3A2881EE9600C70593 /* Assets.xcassets */; };
@@ -17,6 +19,7 @@
 		2987342A2882002D00CA7501 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298734292882002D00CA7501 /* TransactionRow.swift */; };
 		2987342D28821B8400CA7501 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 2987342C28821B8400CA7501 /* SwiftUIFontIcon */; };
 		2987342F288268AF00CA7501 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987342E288268AF00CA7501 /* TransactionListViewModel.swift */; };
+		29C642BA288601910077E34E /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C642B9288601910077E34E /* TransactionList.swift */; };
 		29EA99822884A10200616210 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA99812884A10200616210 /* RecentTransactionList.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,7 @@
 		298734272881FCAC00CA7501 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		298734292882002D00CA7501 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		2987342E288268AF00CA7501 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		29C642B9288601910077E34E /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 		29EA99812884A10200616210 /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290613B2288614C1005FE8B1 /* SwiftUICharts in Frameworks */,
+				290613AF288612D4005FE8B1 /* Collections in Frameworks */,
 				2987342D28821B8400CA7501 /* SwiftUIFontIcon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +76,7 @@
 				29EA99812884A10200616210 /* RecentTransactionList.swift */,
 				298734292882002D00CA7501 /* TransactionRow.swift */,
 				2987342E288268AF00CA7501 /* TransactionListViewModel.swift */,
+				29C642B9288601910077E34E /* TransactionList.swift */,
 				298734252881FB6C00CA7501 /* TransactionModel.swift */,
 				298734232881F5E800CA7501 /* Extensions.swift */,
 				29657C3A2881EE9600C70593 /* Assets.xcassets */,
@@ -105,6 +112,8 @@
 			name = Spender;
 			packageProductDependencies = (
 				2987342C28821B8400CA7501 /* SwiftUIFontIcon */,
+				290613AE288612D4005FE8B1 /* Collections */,
+				290613B1288614C1005FE8B1 /* SwiftUICharts */,
 			);
 			productName = Spender;
 			productReference = 29657C332881EE9300C70593 /* Spender.app */;
@@ -136,6 +145,8 @@
 			mainGroup = 29657C2A2881EE9300C70593;
 			packageReferences = (
 				2987342B28821B8400CA7501 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+				290613AD288612D4005FE8B1 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				290613B0288614C1005FE8B1 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 29657C342881EE9300C70593 /* Products */;
 			projectDirPath = "";
@@ -164,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298734282881FCAC00CA7501 /* PreviewData.swift in Sources */,
+				29C642BA288601910077E34E /* TransactionList.swift in Sources */,
 				29EA99822884A10200616210 /* RecentTransactionList.swift in Sources */,
 				298734262881FB6C00CA7501 /* TransactionModel.swift in Sources */,
 				29657C392881EE9300C70593 /* ContentView.swift in Sources */,
@@ -371,6 +383,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		290613AD288612D4005FE8B1 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+		290613B0288614C1005FE8B1 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.2";
+			};
+		};
 		2987342B28821B8400CA7501 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon.git";
@@ -382,6 +410,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		290613AE288612D4005FE8B1 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 290613AD288612D4005FE8B1 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		290613B1288614C1005FE8B1 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 290613B0288614C1005FE8B1 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
 		2987342C28821B8400CA7501 /* SwiftUIFontIcon */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2987342B28821B8400CA7501 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
