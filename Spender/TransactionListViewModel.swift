@@ -63,13 +63,27 @@ final class TransactionListViewModel: ObservableObject{
         print("accumulateTransactions")
         guard !transactions.isEmpty else { return []}
         
-        let today = "07/18/2022".dateParsed()
+        let today = "07/19/2022".dateParsed() //Date()
         let dateInterval = Calendar.current.dateInterval(of: .month, for: today)!
         print("dateInterval", dateInterval)
        
-        var sum: Double = .zero
-        var cummulativeSum = TransactionPrefixSum()
+        var sum: Double = .zero//single value
+        print("this is sum -> \(sum)")
+        var cumulativeSum = TransactionPrefixSum() //set of values
+        print("this is sum -> \(cumulativeSum)")
         
+        for date in stride(from: dateInterval.start, to: today, by: 60 * 60 * 24){
+            let dailyExpenses = transactions.filter { $0.dateParsed == date && $0.isExpense}
+            let dailyTotal = dailyExpenses.reduce(0) {$0 - $1.negOrPosAmount} //@negOrPos is negative, subtract to make it` positive
+            
+            sum += dailyTotal
+            sum = sum.roundedTo2Digits() //rounded extension
+            cumulativeSum.append((date.formatted(), sum))
+            print(date.formatted(),"daily total:", dailyTotal, "sum :", sum )
+            
+            
+        }
+        return cumulativeSum
     }
 }
 

@@ -44,7 +44,7 @@ struct TransactionRow: View {
             Spacer()
             //MARK :- Transaction Amount
             //if its credit, color = .secondary else = .primary
-            Text(transaction.negorPosAmount, format: .currency(code: "USD"))
+            Text(transaction.negOrPosAmount, format: .currency(code: "USD"))
                 .bold()
                 .foregroundColor(transaction.type == TransactionType.credit.rawValue ? .secondary : .primary)
             

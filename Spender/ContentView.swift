@@ -8,8 +8,11 @@
 import SwiftUI
 import SwiftUICharts
 
+
 struct ContentView: View {
-    var demoData: [Double] = [8,2,4,6,12,9,2]
+    @EnvironmentObject var transactionListVM: TransactionListViewModel
+    
+    // var demoData: [Double] = [8,2,4,6,12,9,2]
     var body: some View {
         NavigationView{
             ScrollView{
@@ -20,17 +23,25 @@ struct ContentView: View {
                         .fontWeight(.bold)
                     
                     //MARK :- Chart
-                    CardView {
-                        VStack {
-                        ChartLabel("$900", type: .title)
-                        LineChart()
+                    let data = transactionListVM.accumulateTransactions()
+                    if !data.isEmpty{
+                        let totalExpenses = data.last?.1 ?? 0
+                        
+                        CardView(showShadow: false) {
+                            VStack (alignment: .leading){
+                                
+                                ChartLabel(totalExpenses.formatted(.currency(code: "USD")), type: .title, format: "$%.02f")
+                            LineChart()
+                            }
+                                .background(Color.systemBackground) //the chart is not dynamic for darkmode so we have to manually fix it to work for darkmode as well
                         }
-                            .background(Color.systemBackground) //the chart is not dynamic for darkmode so we have to manually fix it to work for darkmode as well
+                        
+                        .data(data)
+                        .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: [ColorGradient(.icon.opacity(0.4),.icon)]))
+                    .frame(height: 300)
+                        
                     }
                     
-                    .data(demoData)
-                    .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: [ColorGradient(.icon.opacity(0.4),.icon)]))
-                .frame(height: 100)
                 
                     
                     //MARK :- Recent Transaction List

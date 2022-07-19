@@ -37,7 +37,7 @@ struct Transaction: Identifiable, Decodable, Hashable{
         date.dateParsed()
     }
     //MARK :- show negative or postive balance.
-    var negorPosAmount: Double{
+    var negOrPosAmount: Double{
         return type == TransactionType.credit.rawValue ? amount : -amount
     }
     var month: String{
