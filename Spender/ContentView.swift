@@ -25,7 +25,7 @@ struct ContentView: View {
                     //MARK :- Chart
                     let data = transactionListVM.accumulateTransactions()
                     if !data.isEmpty{
-                        let totalExpenses = data.last?.1 ?? 0
+                        let totalExpenses = data.last?.1 ?? 2
                         
                         CardView(showShadow: false) {
                             VStack (alignment: .leading){
@@ -33,7 +33,7 @@ struct ContentView: View {
                                 ChartLabel(totalExpenses.formatted(.currency(code: "USD")), type: .title, format: "$%.02f")
                             LineChart()
                             }
-                                .background(Color.systemBackground) //the chart is not dynamic for darkmode so we have to manually fix it to work for darkmode as well
+                            .background(Color.systemBackground) //the chart is not dynamic for darkmode so we have to manually fix it to work for darkmode as well
                         }
                         
                         .data(data)
@@ -62,6 +62,7 @@ struct ContentView: View {
                        // .renderingMode(.original) //system color for bell
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(Color.icon, .yellow)
+                    
                         
                 }
             }

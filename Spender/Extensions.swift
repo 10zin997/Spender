@@ -22,7 +22,8 @@ extension DateFormatter{
     static let dateUSA: DateFormatter = {
         print("Intializing DateFormatter")
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM,dd,yy"
+        formatter.dateFormat = "MM/dd/yyyy"
+        
         return formatter
     }()
 }

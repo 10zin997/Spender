@@ -6,7 +6,7 @@
 // https://designcode.io/data/transactions.json
 
 import Foundation
-import Combine
+import Combine // for .sink
 import Collections //to use OrderedDictionary, wwdc 2021 collection library
 
 //MARK :- since dictionary is unordered we to need to make it ordered so that the app is consistent.
@@ -62,28 +62,26 @@ final class TransactionListViewModel: ObservableObject{
     func accumulateTransactions() -> TransactionPrefixSum{
         print("accumulateTransactions")
         guard !transactions.isEmpty else { return []}
-        
-        let today = "07/19/2022".dateParsed() //Date()
+
+        let today = "02/17/2022".dateParsed() //Date() use exact date to satisfy json data.
         let dateInterval = Calendar.current.dateInterval(of: .month, for: today)!
         print("dateInterval", dateInterval)
-       
+
         var sum: Double = .zero//single value
         print("this is sum -> \(sum)")
         var cumulativeSum = TransactionPrefixSum() //set of values
         print("this is sum -> \(cumulativeSum)")
-        
+
         for date in stride(from: dateInterval.start, to: today, by: 60 * 60 * 24){
             let dailyExpenses = transactions.filter { $0.dateParsed == date && $0.isExpense}
+            print("sum in stride \(sum)")
             let dailyTotal = dailyExpenses.reduce(0) {$0 - $1.negOrPosAmount} //@negOrPos is negative, subtract to make it` positive
-            
+
             sum += dailyTotal
             sum = sum.roundedTo2Digits() //rounded extension
             cumulativeSum.append((date.formatted(), sum))
             print(date.formatted(),"daily total:", dailyTotal, "sum :", sum )
-            
-            
         }
         return cumulativeSum
     }
 }
-
